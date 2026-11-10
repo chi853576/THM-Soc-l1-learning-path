@@ -27,11 +27,11 @@ Bằng cách nào: chuyển giao cảnh báo cho người phụ trách cấp đ�
 # Luyện tập phân loại, báo cáo và quyết định leo thang:
 mô tả: trình mô phỏng của try hack me mô phỏng ko gian phân tích cảnh báo của hệ thống bảo mật như SIEM. Ở đây sẽ có chứa những cảnh báo, tôi cần phân loại, viết báo cáo đáp ứng yêu câu 5W và chỉ định đúng cảnh báo cần L2. 
 
-![alt text](image-5.png)
+![alt text](./images/image-5.png)
 
 1. Tôi bắt đầu phân tích alert đầu tiên:
 
-![alt text](image-6.png)
+![alt text](./images/image-6.png)
 > Những điều tôi hiểu sau việc phân tích và tìm kiếm thông tin:
 - Sự kiện ghi lại trên host DMZ-MSEXCHANGE-2013: nằm ở DMZ (vùng mạng công khai ra internet), chạy OS Windows Server 2012 R2 (hệ điều hành đã hết hỗ trợ, không còn vá bảo mật), chứa lỗ hỏng ProxyLogon (CVE-2021-26855) và ProxyShell (CVE-2021-34473).
 - w3wp.exe: Đây là process của IIS - Internet Information Services, là cái web server chạy Outlook Web Access (OWA) của Exchange.
@@ -39,18 +39,18 @@ mô tả: trình mô phỏng của try hack me mô phỏng ko gian phân tích c
 - cmd đã thực thi: dir hostname whoami /priv net group "Domain Admins" /domain nltest /dclist:tryhackme.thm. Đây là biểu hiện của việc trinh sát của hacker, nó cần biết nó đã hack đc vào máy ai, máy đó có nhiệm vụ gì, làm được gì, tài khoản nào có quyền cao nhất,...
 
 > tôi kết luận và viết báo cáo: đây là true positive, báo cáo sẽ bao gồm tất cả những gì tôi phân tích bên trên và cảnh báo này cần leo thang.
-![alt text](image-7.png)
+![alt text](./images/image-7.png)
 > bình luận đã viết: At 19:56 on March 27th, the host dmz/DMZ-MSEXCHANGE-2013 executed a series of commands to gather information about the server, admin accounts, and domain controllers. This is indicative of standard reconnaissance activity performed by an attacker after compromising a server. IIS is affected by ProxyLogon (CVE-2021-26855) and ProxyShell (CVE-2021-34473) vulnerabilities, which may have provided a favorable condition for the attacker to gain initial access. Suspicious process chain observed: w3wp.exe -> revshell.exe -> cmd.exe. It is suspected that the attacker has established a remote connection and begun executing commands under the user account: NT AUTHORITY\SYSTEM.
 
 
 2. Tiếp tục với alert tiếp theo liên quan đến email phishing:
-![alt text](image-8.png)
+![alt text](./images/image-8.png)
 
 >tôi hiểu gì:
 - SPF Fail: Nghĩa là email này được gửi từ một server lạ, không phải server của Microsoft. Microsoft có công bố danh sách server được phép gửi mail @microsoft.com, và con server gửi mail này không nằm trong danh sách đó.
 - DKIM Fail: Chữ ký số của Microsoft không khớp. Tức là email bị giả mạo chữ ký.
 
-![alt text](image-9.png)
+![alt text](./images/image-9.png)
 > tôi kết luận: cần leo thang cảnh báo, chuyển cho l2, và báo cáo tôi đã viết: At 19:56, an email with subject "Important Update: Microsoft Teams Pricing Increase" was flagged as phishing post-delivery.
 Spoofing Evidence: Sender spoofed as support@microsoft.com with SPF/Fail and DKIM/Fail, confirming the email did not originate from Microsoft infrastructure.
 Social Engineering: Uses urgency ("600% price increase", "urgent notice") targeting IT Manager () to lure victim into opening attachment.

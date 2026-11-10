@@ -28,7 +28,7 @@ Alert => thông báo được tạo ra bởi giải pháp của hệ thống b�
 
 4. Thuộc tính cảnh báo:
 Time, name, serverity (mức độ ưu tiên), status (new, in process, closed), verdict (true or false positive), assign(chỉ định giải quyết cho người nào đó), description,....
-![alt text](./assets/image.png)
+![alt text](./images/image-10.png)
 
 5. Ưu tiên cảnh báo:
 Ko phải cảnh báo nào cũng có mức độ ưu tiên như nhau, có những cảnh báo không đáng lo ngại và cũng có những cảnh báo vô cùng nhạy cảm. Các quy tắc trong hệ thống bảo mật được thiết lập để phân loại mức độ ưu tiên cho các cảnh báo. 
@@ -52,16 +52,16 @@ Ko phải cảnh báo nào cũng có mức độ ưu tiên như nhau, có nhữn
 
 
 ### Luyện tập xem các cảnh báo:
-![alt text](./assets/image-1.png)
+![alt text](./images/image-11.png)
 1. bắt đầu với cảnh báo có mức độ ưu tiên cao nhất. Tôi hiểu canh báo này như sau: 
 - Hệ thống thấy 1 thiết bị gửi đi hơn 5GB dữ liệu đến 1 địa chỉ duy nhất trong 1 ngày, nghi là đang tuồn dữ liệu ra ngoài. 
 - Đích đến là _.zoom.us: Đây là domain chính thống của Zoom. - Gửi 5.8GB / Nhận 5.2GB: Tỷ lệ gửi/nhận gần bằng nhau (1:1). Đây có thể là 1 cuộc gọi video call 2 chiều. Nếu là tuồn dữ liệu thật thì thường chỉ có chiều GỬI ĐI rất lớn, còn chiều nhận về rất nhỏ.
 > tôi quyết định đây là cảnh báo giả và viết bình luận phân tích lý do tại sao nó là giả theo như những gì tôi hiểu ở trên và đáp án đã đúng. 
-![alt text](image.png)
+![alt text](./images/image.png)
 
 
 2. Tiếp đến với cảnh báo high:
-![alt text](image-1.png)
+![alt text](./images/image-1.png)
 >tôi hiểu cảnh báo này như sau: 
 - Rule phát hiện file có 2 đuôi (double-extension) như *.pdf.exe, được tải xuống từ chrome.exe, bởi User: S.Conway.
 File lưu ở: C:\Users\S.Conway\Downloads\cats2025.mp4.exe
@@ -69,14 +69,14 @@ file Motw (mark of the web = file tải xuống từ internet), link tải: http
 - windows mặc định sẽ ẩn đuôi .exe của file, người dùng lầm tưởng đó là file .mp4 - 1 video cat thông thường.
 - domain lạ, ko đáng tin, vì: đuôi web chính thống thường sẽ là .com, .net, .vn,.. còn đuôi .monster là đuôi domain giá rẻ ẩn danh. 
 > tôi quyết định đây là true positive và giải thích như trên và đáp án đã đúng
-![alt text](image-3.png)
+![alt text](./images/image-3.png)
 
 3. Cảnh báo cuối cùng low:
-![alt text](image-2.png)
+![alt text](./images/image-2.png)
 
 > tôi hiểu cảnh báo này như sau:
 - phát hiện việc download từ github và người tải xuống thuộc mạng VPN/developer, có thể là 1 nhân viên thuộc mảng dev đã cài 1 framework,... từ github. điều này có vẻ hợp lý.
 - họ đã cài đặt từ https://github.com/facebook/react : đây là link repo Reactjs chính thống của meta/facebook. đây ko phải tệp chứa mã độc.
 
-![alt text](image-4.png)
+![alt text](./images/image-4.png)
 > tôi quyết định đây là false và đã đúng.

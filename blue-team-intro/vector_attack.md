@@ -25,8 +25,8 @@ Bài luyện tập cho phần này là triển khai các biện pháp hiệu qu�
 ![image](./images/image.png)
 >đối với tình huống trên thì cần cập nhật bản vá vì Exchange mail server - một máy chủ thư điện thử hiện đang chứa lỗ hỏng bảo mật CVE-2024-49040
 
-![image](assets/f16fb1b40ef81708.png)
+![image](./images//f16fb1b40ef81708.png)
 > phân tích tình huống trên: tin tặc tấn công brute force và chiếm đc mật khẩu của tài khoản admin, sau đó nó thay đổi trang web thành nơi chứa link malware và quảng cáo cờ bạc => tôi cần change admin password và nó là đáp án đúng.
 
-![image](assets/662949398027e7f6.png)
+![image](./images//662949398027e7f6.png)
 >phân tích: phát hiện tài khoảng của bộ phận design thực hiện các lệnh cmd => đây là 1 cảnh báo nhạy cảm, cần điều tra thêm. Điều này nhắc nhở tôi rằng khi quan sát alert cần mở rộng cái nhìn, quan tài nguyên của công ty tức là những thành viên công ty và vai trò của họ.

@@ -12,11 +12,11 @@ một số giải pháp EDR hiện có trên thị trường:
 # Các tính năng cốt lõi:
 3 tính năng trụ cột:
 - visibility: khả năng hiển thị. thu thập dữ liệu chi tiết từ các điểm cuối, bao gồm các thay đổi quy trình, thay đổi registry, thay đổi tệp và thư mục, hành động của người dùng, và nhiều hơn nữa. Sau đó, nó trình bày thông tin này cho nhà phân tích theo định dạng rất có cấu trúc. Nhà phân tích có thể xem toàn bộ cây quy trình với dòng thời gian hoạt động đầy đủ của chuỗi hành động. 
-![alt text](image.png)
+![alt text](./images/image.png)
 - detection: kết hợp cả phát hiện dựa trên chữ ký và phát hiện dựa trên hành vi, chẳng hạn như các hoạt động bất thường của người dùng. Với khả năng học máy hiện đại, nó xác định bất kỳ sự sai lệch nào so với hành vi cơ bản và ngay lập tức gắn cờ. Nó cũng có thể phát hiện phần mềm độc hại không cần tệp tin nằm trong bộ nhớ. Ngoài ra, nó cho phép chúng ta cung cấp các IOC tùy chỉnh để phát hiện mối đe dọa.
-![alt text](image-1.png)
+![alt text](./images/image-1.png)
 - response: cho phép các nhà phân tích hành động đối với các mối đe dọa được phát hiện. quyết định cách ly toàn bộ điểm cuối, chấm dứt một tiến trình hoặc cách ly một số tệp,...
-![alt text](image-2.png)
+![alt text](./images/image-2.png)
 
 # Tại sao cần EDR trong khi đã có các phần mềm antivirus ở thiết bị dầu cuối:
 
